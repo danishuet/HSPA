@@ -3,11 +3,25 @@
 
 
     <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="assets/images/house_default.jpg" alt="Card image cap">
+   <div class="img-wrapper">
+
+ <img class="card-img-top" src="assets/images/house_default.jpg" alt="Card image cap">
+ <ul class="list-inline text-center member-icons animate">
+    <li class="list-inline-item">
+        <button class="btn btn-primary"><i class="fa-solid fa-user-pen"></i></button>
+    </li>
+
+        <li class="list-inline-item">
+        <button class="btn btn-primary"><i class="fa-solid fa-address-card"></i></button>
+    </li>
+ </ul>
+   </div>
+       
     <div class="card-body">
-        <h5>{{Property.Type}}</h5>
-        <h5>{{Property.Name}}</h5>
-        <h5>{{Property.Price}}</h5>
+        <h5>{{property.Type}}</h5>
+        <h5>{{property.Name}}</h5>
+        <h5>{{property.Price}}</h5>
+ 
         
     </div>
     <a href="#" class="btn btn-primary">For Sale</a>

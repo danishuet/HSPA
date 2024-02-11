@@ -1,0 +1,34 @@
+[
+    {
+        "Id":1,
+        "Type":"House",
+        "Name":"Pakeeza Estate",
+        "Price":12000
+  }, {
+        "Id":2,
+        "Type":"FLAT",
+        "Name":"GULBURG",
+        "Price":123232
+    },
+     {
+        "Id":3,
+        "Type":"Office",
+        "Name":"Main Office",
+        "Price":1298900
+    },
+       {
+        "Id":4,
+        "Type":"Office",
+        "Name":"Main Office",
+        "Price":12900
+    },
+         {
+        "Id":5,
+        "Type":"Office",
+        "Name":"Main Office",
+        "Price":1200
+  }
+  
+  
+  
+  ]
