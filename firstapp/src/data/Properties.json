@@ -1,29 +1,29 @@
 [
     {
-        "Id":1,
+        "id":1,
         "Type":"House",
         "Name":"Pakeeza Estate",
         "Price":12000
   }, {
-        "Id":2,
+        "id":2,
         "Type":"FLAT",
-        "Name":"GULBURG",
+        "Name":"Karachi",
         "Price":123232
     },
      {
-        "Id":3,
+        "id":3,
         "Type":"Office",
-        "Name":"Main Office",
+        "Name":"Main Office Lahore Gulburd",
         "Price":1298900
     },
        {
-        "Id":4,
+        "id":4,
         "Type":"Office",
         "Name":"Main Office",
         "Price":12900
     },
          {
-        "Id":5,
+        "id":5,
         "Type":"Office",
         "Name":"Main Office",
         "Price":1200

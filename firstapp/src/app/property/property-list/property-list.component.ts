@@ -9,7 +9,7 @@ import { HousingService } from '../../services/housing.service';
 })
 export class PropertyListComponent implements OnInit {
 
-  properties:any;
+  properties:Array<any>;
   constructor(private housingService: HousingService) { }
 
   ngOnInit(): void {
@@ -18,7 +18,10 @@ export class PropertyListComponent implements OnInit {
       data => {
         this.properties = data;
         console.log(data)
+      }, error => {
+        console.log(error);
       }
+      
     );
   }
 }
