@@ -5,7 +5,8 @@
     <div class="card" style="width: 18rem;">
    <div class="img-wrapper">
 
- <img class="card-img-top" src="assets/images/house_default.jpg" alt="Card image cap">
+ <img *ngIf="property.Image" class="card-img-top" src="assets/images/{{property.Image}}.png" alt="Card image cap">
+<img *ngIf="!property.Image" class="card-img-top" src="assets/images/house_default.jpg" alt="Card image cap">
  <ul class="list-inline text-center member-icons animate">
     <li class="list-inline-item">
         <button class="btn btn-primary" routerLink="/property-detail/{{property.id}}"><i class="fa-solid fa-user-pen"></i></button>
