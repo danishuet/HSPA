@@ -12,7 +12,7 @@ constructor() { }
     let users = [];
     if (localStorage.getItem('Users')) {
       users = JSON.parse(localStorage.getItem('Users'))
-      users = [...users,user];
+      users = [user,...users];
 
     }
     else

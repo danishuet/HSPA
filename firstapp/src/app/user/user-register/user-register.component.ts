@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserServiceService } from 'src/app/services/user-service.service';
 import { User } from 'src/app/model/user-interface';
+import * as alertify from 'alertifyjs';
 @Component({
   selector: 'app-user-register',
   templateUrl: './user-register.component.html',
@@ -45,11 +46,28 @@ export class UserRegisterComponent implements OnInit {
     {
       
      
-    this.user = Object.assign(this.user, this.registrationForm.value);
-    this.userService.adduser(this.user);
+   // this.user = Object.assign(this.user, this.registrationForm.value);
+   this.userService.adduser(this.userData());
       this.registrationForm.reset();
-       this.userSubmitted = false;
+      this.userSubmitted = false;
+        alertify.success('Success ! congrats you have done the registration successfully!');
     }
+    else
+    {
+      alertify.error('Sorry! kindly fill out the form completely ');
+      
+      }
+  }
+  userData():User
+  {
+    return this.user = {
+      userName: this.userName.value,
+      password: this.password.value,
+      email: this.email.value,
+      mobile:this.mobile.value
+      
+    }
+
   }
  
   passwordMatchingValidator(fg:FormGroup):Validators
