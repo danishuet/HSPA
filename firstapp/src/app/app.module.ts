@@ -16,9 +16,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { UserServiceService } from './services/user-service.service';
-//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-//import { ToastrModule } from 'ngx-toastr';
 
 const appRoutes: Routes = [
   { path: 'Add-Property', component: AddPropertyComponent },
