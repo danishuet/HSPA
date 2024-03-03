@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserServiceService } from 'src/app/services/user-service.service';
 import { User } from 'src/app/model/user-interface';
-import { ToastrService } from 'ngx-toastr';
+import * as alertify from 'alertifyjs';
 @Component({
   selector: 'app-user-register',
   templateUrl: './user-register.component.html',
@@ -12,7 +12,7 @@ export class UserRegisterComponent implements OnInit {
   registrationForm: FormGroup
   user: User;
   userSubmitted: boolean;
-  constructor(private fb:FormBuilder,private userService:UserServiceService,private toastr: ToastrService) { }
+  constructor(private fb:FormBuilder,private userService:UserServiceService) { }
 
   createRegistrationForm()
   {
@@ -50,17 +50,13 @@ export class UserRegisterComponent implements OnInit {
    this.userService.adduser(this.userData());
       this.registrationForm.reset();
       this.userSubmitted = false;
-     this.toastr.error('everything is broken', 'Major Error', {
-  timeOut: 3000,
-});
-     // alertify.success('message');
-       // alertify.success('Success ! congrats you have done the registration successfully!');
+        alertify.success('Success ! congrats you have done the registration successfully!');
     }
-    // else
-    // {
-    //   alertify.error('Sorry! kindly fill out the form completely ');
+    else
+    {
+      alertify.error('Sorry! kindly fill out the form completely ');
       
-    //   }
+      }
   }
   userData():User
   {

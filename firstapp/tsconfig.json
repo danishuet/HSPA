@@ -19,8 +19,7 @@
     "target": "es2020",
     "typeRoots": [
       "node_modules/@types",
-      "src/alertifytype.d.ts",
-      //"src/alertifytype.d.ts"
+      "src/alertify.d.ts"
     ],
     "module": "es2020",
     "lib": [
