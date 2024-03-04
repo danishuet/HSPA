@@ -16,6 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { UserServiceService } from './services/user-service.service';
+import { AlertifyService } from './services/alertify.service';
+import { AuthServiceService } from './services/AuthService.service';
 
 const appRoutes: Routes = [
   { path: 'Add-Property', component: AddPropertyComponent },
@@ -54,6 +56,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     HousingService,
+    AlertifyService,
+    AuthServiceService,
     UserServiceService
   ],
   bootstrap: [AppComponent]

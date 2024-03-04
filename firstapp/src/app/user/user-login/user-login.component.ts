@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { AuthServiceService } from 'src/app/services/AuthService.service';
+import { AlertifyService } from 'src/app/services/alertify.service';
 
 @Component({
   selector: 'app-user-login',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserLoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService:AuthServiceService,private alertify:AlertifyService) { }
 
   ngOnInit(): void {
   }
-
+  onLogin(loginForm:NgForm)
+  {
+    console.log(loginForm.value);
+    const token = this.authService.authUser(loginForm.value);
+    if (token)
+    {
+      localStorage.setItem('token', token.userName);
+      this.alertify.success('Login successfully!')
+    }
+    else
+    {
+      this.alertify.error('Login NO successfull!')
+      }
+  }
 }

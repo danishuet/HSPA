@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { UserServiceService } from 'src/app/services/user-service.service';
 import { User } from 'src/app/model/user-interface';
 import * as alertifyjs from 'alertifyjs';
+import { AlertifyService } from 'src/app/services/alertify.service';
 @Component({
   selector: 'app-user-register',
   templateUrl: './user-register.component.html',
@@ -12,7 +13,7 @@ export class UserRegisterComponent implements OnInit {
   registrationForm: FormGroup
   user: User;
   userSubmitted: boolean;
-  constructor(private fb:FormBuilder,private userService:UserServiceService) { }
+  constructor(private fb:FormBuilder,private userService:UserServiceService,private alertify:AlertifyService) { }
 
   createRegistrationForm()
   {
@@ -50,9 +51,13 @@ export class UserRegisterComponent implements OnInit {
    this.userService.adduser(this.userData());
       this.registrationForm.reset();
       this.userSubmitted = false;
-      alertifyjs.success('message');
+      this.alertify.success('Success! you have registered successfully!');
       //  alertify.success('Success ! congrats you have done the registration successfully!');
     } 
+    else
+    {
+         this.alertify.error('Failed! check your form first');
+      }
    
   }
   userData():User

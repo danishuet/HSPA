@@ -1,0 +1,20 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthServiceService {
+
+constructor() { }
+
+  authUser(user:any)
+  {
+    let userArray = [];
+    if (localStorage.getItem('Users')) {
+     // userArray = JSON.parse(localStorage.getItem('Users') as string);
+      userArray = JSON.parse(localStorage.getItem('Users') as string);
+    }
+    return userArray.find(p => p.userName === user.userName && p.password === user.password);
+
+  }
+}
