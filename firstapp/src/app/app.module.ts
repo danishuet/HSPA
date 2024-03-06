@@ -16,10 +16,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { UserServiceService } from './services/user-service.service';
-//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AlertifyService } from './services/alertify.service';
+import { AuthServiceService } from './services/AuthService.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDropdownConfig, BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
-//import { ToastrModule } from 'ngx-toastr';
-
+@NgModule({
+  imports: [BsDropdownModule.forRoot(),...]
+})
 const appRoutes: Routes = [
   { path: 'Add-Property', component: AddPropertyComponent },
   { path: 'Rent-Property', component: RentPropertyComponent },
@@ -48,15 +52,19 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    //BrowserAnimationsModule, // required animations module
-    // ToastrModule.forRoot(), // ToastrModule added
+   
+ 
      RouterModule.forRoot(appRoutes),
     FormsModule,
     ReactiveFormsModule,
-     
+    BrowserAnimationsModule, 
+    BsDropdownModule.forRoot()
+  
   ],
   providers: [
     HousingService,
+    AlertifyService,
+    AuthServiceService,
     UserServiceService
   ],
   bootstrap: [AppComponent]
