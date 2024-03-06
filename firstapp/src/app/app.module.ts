@@ -20,7 +20,10 @@ import { AlertifyService } from './services/alertify.service';
 import { AuthServiceService } from './services/AuthService.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownConfig, BsDropdownModule } from 'ngx-bootstrap/dropdown';
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of daa12ed (This is final dropdown)
 const appRoutes: Routes = [
   { path: 'Add-Property', component: AddPropertyComponent },
   { path: 'Rent-Property', component: RentPropertyComponent },
@@ -56,7 +59,10 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     BrowserAnimationsModule, 
     BsDropdownModule.forRoot(),
+<<<<<<< HEAD
     
+=======
+>>>>>>> parent of daa12ed (This is final dropdown)
      
   ],
   providers: [
