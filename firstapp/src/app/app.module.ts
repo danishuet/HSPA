@@ -21,9 +21,6 @@ import { AuthServiceService } from './services/AuthService.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownConfig, BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
-@NgModule({
-  imports: [BsDropdownModule.forRoot(),...]
-})
 const appRoutes: Routes = [
   { path: 'Add-Property', component: AddPropertyComponent },
   { path: 'Rent-Property', component: RentPropertyComponent },
@@ -58,8 +55,9 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule, 
-    BsDropdownModule.forRoot()
-  
+    BsDropdownModule.forRoot(),
+    
+     
   ],
   providers: [
     HousingService,

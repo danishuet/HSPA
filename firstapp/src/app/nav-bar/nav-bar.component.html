@@ -45,7 +45,7 @@
           </li> -->
           <div *ngIf="loggedin()" class="dropdown mr-5" dropdown>
           <a href="#" class="dropdown-toggle text-light" dropdownToggle (click)="false">
-          Welcome
+          Welcome {{loggedinUser}}
           </a>
           <div class="dropdown-menu" *dropdownMenu>
             <a href="#" class="dropdown-item">
