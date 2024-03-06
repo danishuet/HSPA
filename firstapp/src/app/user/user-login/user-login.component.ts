@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthServiceService } from 'src/app/services/AuthService.service';
 import { AlertifyService } from 'src/app/services/alertify.service';
 
@@ -10,7 +11,7 @@ import { AlertifyService } from 'src/app/services/alertify.service';
 })
 export class UserLoginComponent implements OnInit {
 
-  constructor(private authService:AuthServiceService,private alertify:AlertifyService) { }
+  constructor(private authService:AuthServiceService,private alertify:AlertifyService,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -22,6 +23,7 @@ export class UserLoginComponent implements OnInit {
     {
       localStorage.setItem('token', token.userName);
       this.alertify.success('Login successfully!')
+      this.router.navigate(['/']);
     }
     else
     {
